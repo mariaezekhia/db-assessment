@@ -22,7 +22,24 @@ def print_query(view_name:str):
     print(tabulate(results,headings))
     db.close()
 
-print_query ('five')
+print_query ('season 2')
 
 menu_choice ='' 
-while menu_choice 
+while menu_choice != 'Z':
+    menu_choice = input('Welcome to the Kdrama database\n\n'
+                        'Type the letter for the information you want:\n'
+                        'A: Kdrama with romance genre\n'
+                        'B: Kdrama release after 2018\n'
+                        'C: Kdrama with the ratings of below 4.5\n'
+                        'D: Kdrama with has season 2\n'
+                        'Z: Exit\n\nType option here: ')
+    menu_choice = menu_choice.upper()
+    if menu_choice == 'A':
+        print_query('romance genre')
+    elif menu_choice == 'B':
+        print_query('after 2018')
+    elif menu_choice == 'C':
+        print_query('below 4.5')
+    elif menu_choice == 'D':
+        print_query('season 2')
+    
